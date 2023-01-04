@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function TinhTienThue(value) {
+            var money;
+            if (value <= 60000000) {
+                money = value * 5 / 100;
+            }
+            else if (value > 60000000 && value <= 120000000) {
+                money = value * 10 / 100;
+            }
+            else if (value > 120000000 && value <= 210000000) {
+                money = value * 15 / 100;
+            }
+            else if (value > 210000000 && value <= 384000000) {
+                money = value * 20 / 100;
+            }
+            else if (value > 284000000 && value <= 624000000) {
+                money = value * 25 / 100;
+            }
+            else if (value > 624000000 && value <= 960000000) {
+                money = value * 30 / 100;
+            }
+            else if (value > 960000000) {
+                money = value * 35 / 100;
+            }
+            return money;
+        }
+
+        let Name = prompt("Nhập vào tên của bạn:");
+        let Income = Number(prompt("Nhập vào tổng thu nhập"));
+        let People = Number(prompt("Nhập vào số người phụ thuộc"));
+        let totalMoney = Income - 4000000 - People * 1600000;
+        let tax = TinhTienThue(totalMoney);
+        alert("THUẾ THU NHẬP CÁ NHÂN PHẢI ĐÓNG LÀ: " + new Intl.NumberFormat('vn-VN').format(tax));
+    </script>
+</body>
+
+</html>

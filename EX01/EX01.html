@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./index.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function AreaPoint(point) {
+            if (point === "A") {
+                return 2;
+            }
+            if (point === "B") {
+                return 1;
+            }
+            if (point === "C") {
+                return 0.5;
+            }
+            return 0;
+        }
+
+        function TypePoint(point) {
+            if (point === "1") {
+                return 2.5;
+            }
+            if (point === "2") {
+                return 1.5;
+            }
+            if (point === "3") {
+                return 1;
+            }
+            return 0;
+        }
+
+        let DiemChuan = Number(prompt("Mời bạn nhập điểm chuẩn"), 0);
+        let Mon1 = Number(prompt("Nhập điểm môn thứ nhất"), 0);
+        let Mon2 = Number(prompt("Nhập điểm môn thứ hai"), 0);
+        let Mon3 = Number(prompt("Nhập điểm môn thứ ba"), 0);
+        let Area = prompt("Nhập vào khu vực của bạn");
+        let Type = prompt("Nhập vào đối tượng ưu tiên");
+
+        let DiemArea = AreaPoint(Area);
+        let DiemType = TypePoint(Type);
+        let total = Mon1 + Mon2 + Mon3 + DiemArea + DiemType;
+
+        if (total >= DiemChuan && Mon1 > 0 && Mon2 > 0 && Mon3 > 0) {
+            alert("ĐẬU ĐẠI HỌC");
+        }
+        else {
+            alert("RỚT ĐẠI HỌC");
+        }
+
+
+    </script>
+</body>
+
+</html>

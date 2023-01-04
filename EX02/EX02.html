@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function TinhTienDien(value) {
+            var money;
+            if (value <= 50) {
+                money = value * 500;
+            }
+            else if (value > 50 && value <= 100) {
+                money = 50 * 500 + (value - 50) * 650;
+            }
+            else if (value > 100 && value <= 200) {
+                money = 50 * 500 + 50 * 650 + (value - 100) * 850;
+            }
+            else if (value > 200 && value <= 350) {
+                money = 50 * 500 + 50 * 650 + 100 * 850 + (value - 200) * 1100;
+            }
+            else if (value > 350) {
+                money = 50 * 500 + 50 * 650 + 100 * 850 + 150 * 1100 + (value - 350) * 1300;
+            }
+            return money;
+        }
+        let Name = prompt("Nhập vào tên của bạn:");
+        let Used = Number(prompt("Nhập vào số điện đã sử dụng"));
+        let TotalMoney = TinhTienDien(Used);
+        alert("TỔNG TIỀN ĐIỆN THÁNG NÀY LÀ: " + new Intl.NumberFormat('vn-VN').format(TotalMoney));
+    </script>
+</body>
+
+
+</html>
